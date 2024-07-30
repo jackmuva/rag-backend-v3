@@ -1,0 +1,13 @@
+web:
+  driver_arguments:
+    # The arguments to pass to the webdriver. E.g.: add --headless to run in headless mode
+    - --no-sandbox
+    - --disable-dev-shm-usage
+  urls:
+    # base_url: The URL to start crawling with
+    # prefix: Only crawl URLs matching the specified prefix
+    # depth: The maximum depth for BFS traversal
+    # You can add more websites by adding more entries (don't forget the - prefix from YAML)
+    - base_url: https://trtlpost.com
+      prefix: https://trtlpost.com
+      depth: 1
