@@ -8,6 +8,9 @@ web:
     # prefix: Only crawl URLs matching the specified prefix
     # depth: The maximum depth for BFS traversal
     # You can add more websites by adding more entries (don't forget the - prefix from YAML)
-    - base_url: https://trtlpost.com
-      prefix: https://trtlpost.com
+#    - base_url: http://localhost:3001/blocks
+#      prefix: http://localhost:3001/blocks
+#      depth: 1
+    - base_url: https://rag.trtlmail-rest.com/api/getAll
+      prefix: https://rag.trtlmail-rest.com/api/getAll
       depth: 1

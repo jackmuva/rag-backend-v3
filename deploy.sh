@@ -6,7 +6,7 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 
 echo "Build Steps:"
 echo "building image..."
-gi
+docker build -t 514832027284.dkr.ecr.us-east-1.amazonaws.com/rag-backend:latest .
 
 echo "Syncing env file in S3"
 aws s3 --region 'us-east-1' sync ./env 's3://rag-backend-env/'
