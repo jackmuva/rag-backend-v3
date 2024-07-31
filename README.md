@@ -63,7 +63,7 @@ ENVIRONMENT=prod python main.py
 1. Build an image for the FastAPI app:
 
 ```
-docker build -t <your_backend_image_name> .
+docker build -t 514832027284.dkr.ecr.us-east-1.amazonaws.com/rag-backend:latest .
 ```
 
 2. Generate embeddings:
@@ -77,11 +77,13 @@ docker run \
   -v $(pwd)/config:/app/config \
   -v $(pwd)/data:/app/data \ # Use your local folder to read the data
   -v $(pwd)/storage:/app/storage \ # Use your file system to store the vector database
-  <your_backend_image_name> \
+  514832027284.dkr.ecr.us-east-1.amazonaws.com/rag-backend:latest \
   poetry run generate
 ```
 
 3. Start the API:
+
+`docker run -v $(pwd)/.env:/app/.env -v $(pwd)/config:/app/config -v $(pwd)/storage:/app/storage -p 8000:8000 514832027284.dkr.ecr.us-east-1.amazonaws.com/rag-backend:latest`
 
 ```
 docker run \
@@ -89,7 +91,7 @@ docker run \
   -v $(pwd)/config:/app/config \
   -v $(pwd)/storage:/app/storage \ # Use your file system to store gea vector database
   -p 8000:8000 \
-  <your_backend_image_name>
+  514832027284.dkr.ecr.us-east-1.amazonaws.com/rag-backend:latest
 ```
 
 ## Learn More

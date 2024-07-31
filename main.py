@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from app.api.routers.chat import chat_router
 from app.api.routers.upload import file_upload_router
+from app.api.routers.healthcheck import healthcheck_router
 from app.settings import init_settings
 from app.observability import init_observability
 from fastapi.staticfiles import StaticFiles
@@ -55,6 +56,7 @@ mount_static_files("output", "/api/files/output")
 
 app.include_router(chat_router, prefix="/api/chat")
 app.include_router(file_upload_router, prefix="/api/chat/upload")
+app.include_router(healthcheck_router, prefix="/healthcheck")
 
 if __name__ == "__main__":
     app_host = os.getenv("APP_HOST", "0.0.0.0")

@@ -1,4 +1,7 @@
 __pycache__
 storage
-.env
+env/.env
 output
+.env
+*.env
+app/.env
