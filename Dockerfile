@@ -24,3 +24,5 @@ FROM build as release
 COPY . .
 
 CMD ["python", "main.py"]
+#CMD ["python", "-m", "uvicorn", "main:app", "--port", "8000"]
+#CMD ["gunicorn", "--bind", "0.0.0.0:8000", "-k", "uvicorn.workers.UvicornWorker", "app:app"]
